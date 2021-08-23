@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "experiments",
+  "info": {
+    "name": "Experiment"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "projectName": {
+      "type": "string",
+      "required": true
+    },
+    "graph": {
+      "type": "json"
+    },
+    "status": {
+      "type": "json"
+    }
+  }
+}

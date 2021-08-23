@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "nodes",
+  "info": {
+    "name": "Node"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "category": {
+      "model": "category",
+      "via": "treeData"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "codeName": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "string",
+      "required": true
+    },
+    "author": {
+      "type": "string"
+    },
+    "data": {
+      "type": "json"
+    }
+  }
+}

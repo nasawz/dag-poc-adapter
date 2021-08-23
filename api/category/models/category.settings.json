@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "categories",
+  "info": {
+    "name": "Category"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "codeName": {
+      "type": "string",
+      "required": true
+    },
+    "category": {
+      "type": "string",
+      "required": true
+    },
+    "isDir": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "isExpanded": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "treeData": {
+      "via": "category",
+      "collection": "node"
+    }
+  }
+}
