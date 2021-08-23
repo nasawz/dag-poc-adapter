@@ -1,0 +1,36 @@
+{
+  "envId": "{{env.ENV_ID}}",
+  "version": "2.0",
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "functionRoot": "./functions",
+  "functions": [],
+  "region": "ap-shanghai",
+  "framework": {
+    "name": "dag-poc",
+    "plugins": {
+      "server": {
+        "use": "@cloudbase/framework-plugin-container",
+        "inputs": {
+          "serviceName": "dag-poc-adapter",
+          "servicePath": "/api",
+          "containerPort": 1337,
+          "uploadType": "image",
+          "imageInfo": {
+            "imageUrl": "nasawz/dag-poc-adapter"
+          },
+          "volumeMounts": {
+            "/usr/src/app/.tmp": "dag-poc-adapter-cfs"
+          }
+        }
+      }
+    },
+    "requirement": {
+      "addons": [
+        {
+          "type": "CFS",
+          "name": "dag-poc-adapter-cfs"
+        }
+      ]
+    }
+  }
+}
