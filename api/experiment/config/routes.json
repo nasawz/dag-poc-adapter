@@ -1,6 +1,22 @@
 {
   "routes": [
     {
+      "method": "POST",
+      "path": "/experiments/deploy",
+      "handler": "experiment.deploy",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/experiments/run",
+      "handler": "experiment.run",
+      "config": {
+        "policies": []
+      }
+    },    
+    {
       "method": "GET",
       "path": "/experiments",
       "handler": "experiment.find",

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "08/23/2021 10:11:32 PM"
+    "x-generation-date": "08/24/2021 4:05:41 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -23,8 +23,16 @@
   },
   "servers": [
     {
-      "url": "http://192.168.5.177:1337",
-      "description": "测试服"
+      "url": "http://localhost:1337",
+      "description": "Development server"
+    },
+    {
+      "url": "YOUR_STAGING_SERVER",
+      "description": "Staging server"
+    },
+    {
+      "url": "YOUR_PRODUCTION_SERVER",
+      "description": "Production server"
     }
   ],
   "externalDocs": {
@@ -603,6 +611,148 @@
             }
           }
         ]
+      }
+    },
+    "/experiments/deploy": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Experiment"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/experiments/run": {
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Experiment"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "foo": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/experiments": {
