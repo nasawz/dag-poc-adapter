@@ -12,7 +12,7 @@ module.exports = {
       const data = ctx.request.body;
       try {
         let res = await axios.post(
-          "http://192.168.5.177:2021/domain/demo/dynamic_job",
+          "http://192.168.5.177:2021/domain/demo/v2/job/deploy",
           data
         );
         resolve({ succ: true });
@@ -22,7 +22,16 @@ module.exports = {
     });
   },
   async run(ctx) {
-    console.log(ctx);
-    return "run";
+    return new Promise(async (resolve, reject) => {
+      const data = ctx.request.body;
+      try {
+        let res = await axios.put(
+          `http://192.168.5.177:2021/domain/demo/v2/job/${data.id}/execute`
+        );
+        resolve({ succ: true });
+      } catch (error) {
+        reject(error);
+      }
+    });
   },
 };

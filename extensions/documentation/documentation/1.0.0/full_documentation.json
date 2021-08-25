@@ -23,7 +23,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:1337",
+      "url": "http://192.168.1.238:1337",
       "description": "Development server"
     },
     {
