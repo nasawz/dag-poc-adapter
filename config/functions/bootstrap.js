@@ -48,7 +48,7 @@ module.exports = async () => {
         for (let key in data) {
           console.log(`${key} : ${data[key]}`);
           const map = await hz.getMap(key);
-          await map.put(`s_${key}`, data[key])
+          await map.put(`${key}`, data[key])
         }
         callback(null, { data: "success" });
       } catch (error) {
