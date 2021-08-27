@@ -43,6 +43,19 @@ module.exports = async () => {
       callback(null, { data: v });
     });
 
+    socket.on("updateNode", async ({ data }, callback) => {
+      try {
+        for (let key in data) {
+          console.log(`${key} : ${data[key]}`);
+          const map = await hz.getMap(key);
+          await map.put(`s_${key}`, data[key])
+        }
+        callback(null, { data: "success" });
+      } catch (error) {
+        callback(error);
+      }
+    });
+
     // console.log("=========connection");
     // socket.on("join", ({ username, room }) => {
     //   console.log("user connected");
