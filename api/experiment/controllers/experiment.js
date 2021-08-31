@@ -34,4 +34,18 @@ module.exports = {
       }
     });
   },
+  async emulator(ctx) {
+    return new Promise(async (resolve, reject) => {
+      const data = ctx.request.body;
+      const { id, ...others } = data
+      try {
+        let res = await axios.put(
+          `http://192.168.5.177:2021/domain/demo/v2/job/${id}/message`, others
+        );
+        resolve({ succ: true });
+      } catch (error) {
+        reject(error);
+      }
+    });
+  },
 };

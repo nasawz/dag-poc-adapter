@@ -15,7 +15,15 @@
       "config": {
         "policies": []
       }
-    },    
+    }, 
+    {
+      "method": "POST",
+      "path": "/experiments/emulator",
+      "handler": "experiment.emulator",
+      "config": {
+        "policies": []
+      }
+    },        
     {
       "method": "GET",
       "path": "/experiments",
