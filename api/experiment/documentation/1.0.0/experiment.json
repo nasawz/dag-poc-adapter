@@ -752,6 +752,9 @@
           "status": {
             "type": "object"
           },
+          "constrains": {
+            "type": "object"
+          },
           "published_at": {
             "type": "string",
             "format": "date-time"
@@ -777,6 +780,9 @@
             "type": "object"
           },
           "status": {
+            "type": "object"
+          },
+          "constrains": {
             "type": "object"
           },
           "published_at": {
